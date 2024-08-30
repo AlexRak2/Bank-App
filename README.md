@@ -23,7 +23,7 @@ A simple banking application built with ASP.NET Web App, following the MVC patte
 
 ## Screenshots
 
-## Demo GIF
+## Demo
 
 ![Demo](Screenshots/bank.gif)
 
