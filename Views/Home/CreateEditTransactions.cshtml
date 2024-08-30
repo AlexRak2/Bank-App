@@ -1,0 +1,61 @@
+﻿<style>
+    .card-color {
+        background-color: #212529;
+        border-radius: 0.5rem;
+    }
+
+    .stylish-title {
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        background: linear-gradient(45deg, #3498db, #8e44ad);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding: 20px;
+        border-radius: 10px;
+    }
+</style>
+
+@{
+    ViewData["Title"] = "Create / Edit";
+}
+
+@model ExpensesApp.Models.Transaction
+
+<div class="text-center mb-4 card-color">
+    <h1 class="display-4 text-light stylish-title">Transactions</h1>
+</div>
+
+<form asp-action="CreateEditTransactionsForm" asp-controller="Home" class="p-4 card-color rounded shadow-sm">
+    <input class="form-control invisible" type="text" asp-for="Id" />
+
+    <div class="form-group">
+        <label for="Amount" class="form-label text-light">Amount $</label>
+        <input class="form-control" type="number" placeholder="$0" asp-for="Amount" required />
+        <span asp-validation-for="Amount" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-3">
+        <label for="Transaction_Description" class="form-label text-light">Description</label>
+        <input class="form-control" type="text" placeholder="Add a description" asp-for="Transaction_Description" required />
+        <span asp-validation-for="Transaction_Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-3">
+        <label for="Date" class="form-label text-light">Transaction Date</label>
+        <input class="form-control" type="date" asp-for="Date" required />
+        <span asp-validation-for="Date" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-3">
+        <label for="Transaction_Type" class="form-label text-light">Transaction Type</label>
+        <select class="form-control" asp-for="Transaction_Type" required>
+            <option value="">Select a type</option>
+            <option value="INCOME">Income</option>
+            <option value="EXPENSE">Expense</option>
+        </select>
+        <span asp-validation-for="Transaction_Type" class="text-danger"></span>
+    </div>
+
+    <button class="btn btn-primary mt-4 w-100" type="submit">Submit</button>
+</form>

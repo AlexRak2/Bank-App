@@ -1,0 +1,125 @@
+﻿@using ExpensesApp.Context
+<style>
+
+    .card-color {
+        background-color: #212529;
+    }
+
+    .balance-text{
+        color: #197798;
+    }
+
+    .income-text {
+        color: #5cb066;
+    }
+
+    .expense-text {
+        color: #cb3e3e;
+    }
+
+    .stylish-title {
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        background: linear-gradient(45deg, #3498db, #8e44ad); 
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+</style>
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center ">
+    <div class="text-center mb-4 card-color">
+        <h1 class="display-4 text-light stylish-title">Dashboard</h1>
+    </div>    @*     <a asp-action="Expenses" class = "btn btn-primary">Overview</a>
+    <a asp-action="CreateEditExpense" class = "btn btn-primary">Create New</a> *@
+
+    <div class="row justify-content-center">
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 text-center card-color">
+                <div class="row g-5 justify-content-center align-items-center">
+
+                    <div class="col-md-2 d-flex justify-content-center align-items-center card-color">
+                        <div class="money-icon d-flex justify-content-center align-items-center">
+                            <svg  width="100" height="100" role="img">
+                                <rect width="100%" height="100%" fill="#197798" rx="5" ry="5" />
+                                <text x="50%" y="50%" fill="#ffffff" dy=".3em" font-size="60" font-weight="bold" text-anchor="middle">$</text>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="card-body ">
+                            <h5 class="card-title balance-text" >Balance</h5>
+                            <p class="card-text fs-4 fw-bold text-white" id="totalBalance">$50,000</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 text-center card-color">
+                <div class="row g-5 justify-content-center align-items-center">
+
+                    <div class="col-md-2 d-flex justify-content-center align-items-center card-color">
+                        <div class="money-icon d-flex justify-content-center align-items-center">
+                            <svg width="100" height="100" role="img">
+                                <rect width="100%" height="100%" fill="#5cb066" rx="5" ry="5" />
+                                <text x="50%" y="50%" fill="#ffffff" dy=".3em" font-size="60" font-weight="bold" text-anchor="middle">$</text>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="card-body ">
+                            <h5 class="card-title income-text">Total Income</h5>
+                            <p class="card-text fs-4 fw-bold text-white" id="totalIncome">$50,000</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 text-center card-color">
+                <div class="row g-5 justify-content-center align-items-center">
+
+                    <div class="col-md-2 d-flex justify-content-center align-items-center card-color">
+                        <div class="money-icon d-flex justify-content-center align-items-center">
+                            <svg width="100" height="100" role="img">
+                                <rect width="100%" height="100%" fill="#cb3e3e" rx="5" ry="5" />
+                                <text x="50%" y="50%" fill="#ffffff" dy=".3em" font-size="60" font-weight="bold" text-anchor="middle">$</text>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="card-body ">
+                            <h5 class="card-title expense-text">Total Expense</h5>
+                            <p class="card-text fs-4 fw-bold text-white" id="totalExpense">$50,000</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <canvas id="myLineChart" class="mt-5 card-color" width=100" height="30"></canvas>
+
+</div>
+s
+<script src="/js/dashboard.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
