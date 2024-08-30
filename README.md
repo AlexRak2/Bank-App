@@ -24,11 +24,9 @@ A simple banking application built with ASP.NET Web App, following the MVC patte
 ## Screenshots
 
 ## Demo
-
-![Demo](Screenshots/bank.gif)
+[Watch the demo on YouTube](https://youtu.be/oWmzCNZ6uYc)
 
 ### Dashboard
-![Dashboard](Screenshots/Dashboard_1.png)
 ![Dashboard](Screenshots/Dashboard_2.png)
 
 ### Transactions
